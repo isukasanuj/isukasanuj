@@ -40,7 +40,7 @@ and disclosing responsibly.
 
 | # | CVE | Target | Class | Impact |
 | :-: | :-- | :-- | :-- | :-- |
-| 01 | [CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769) | libtpms | Heap OOB Read | Memory disclosure in emulated-TPM path |
+| 01 | [CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769) | libtpms | Heap OOB Read | DoS — emulated-TPM crash (C:N confirmed) |
 | 02 | [CVE-2026-79411](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79411.md) | Bagisto 2.4.9 | Privilege Escalation | Low-priv user → Administrator |
 | 03 | [CVE-2026-79410](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79410.md) | Bagisto 2.4.9 | Business Logic | Order total forced below real price |
 | 04 | [CVE-2026-79409](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79409.md) | Bagisto 2.4.9 | Info Disclosure (IDOR) | Sensitive data exposed to authed user |
@@ -51,7 +51,7 @@ and disclosing responsibly.
 <br />
 
 ### 01 — [CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769) · libtpms · Heap Out-of-Bounds Read
-A heap out-of-bounds read in **libtpms** during TPM 2.0 state deserialization. The affected component powers `swtpm` / QEMU software-TPM deployments, placing the bug in an emulated-TPM path used across virtualization stacks.
+A heap out-of-bounds read in **libtpms** during TPM 2.0 state deserialization. The affected component powers `swtpm` / QEMU software-TPM deployments, placing the bug in an emulated-TPM path used across virtualization stacks. Exploitation results in DoS only — no information disclosure or code execution confirmed.
 `root-cause analysis` · `proof of concept` · `TPM 2.0`
 
 ### 02 — [CVE-2026-79411](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79411.md) · Webkul Bagisto 2.4.9 · Privilege Escalation
@@ -74,9 +74,11 @@ An authorization flaw in the add-to-cart API and downloadable-product fulfilment
 
 > 🏆 Credited by **GIGABYTE Product Security** for a responsibly disclosed vulnerability.
 
+> 🏆 Credited by **Red Hat Product Security** for responsibly disclosing [CVE-2026-85769](https://access.redhat.com/security/cve/cve-2026-85769) — heap out-of-bounds read in libtpms (swtpm / QEMU vTPM path).
+
+> 🏆 Credited by **WP Recipe Maker** (wordpress.org) in the 10.8.2 changelog for responsibly disclosing an unauthenticated notice-dismissal vulnerability.
+
 <br />
-
-
 
 <div align="center">
 
