@@ -1,69 +1,85 @@
 <div align="center">
 
-<img src="https://media1.tenor.com/m/2EwShyE5d0oAAAAd/capybara-smile-funny-bara.gif" width="260" height="260" alt="capybara" />
+<img src="https://media1.tenor.com/m/2EwShyE5d0oAAAAd/capybara-smile-funny-bara.gif" alt="Smiling capybara" width="240" height="240" />
 
-# Isuk4
+# `isuk4`
 
-**just a kid with a deep passion for cyber security**
+**Penetration Tester · Exploit Developer · Security Researcher**
 
-Web Exploitation · AD & Network Pentesting · Binary Exploitation · Reverse Engineering
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1200&color=00E5A0&center=true&vCenter=true&width=620&lines=break_things()+-%3E+understand()+-%3E+repeat();I+like+to+take+things+apart.;" alt="Typing SVG" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=00E5A0&center=true&vCenter=true&width=560&lines=break_things()+-%3E+understand()+-%3E+repeat();Hide+ur+app+I+might+get+bored" alt="typing" />
+<br />
+
+[![GitHub](https://img.shields.io/badge/GitHub-isukasanuj-00E5A0?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117)](https://github.com/isukasanuj)
+[![CVEs](https://img.shields.io/badge/Published_CVEs-4-00E5A0?style=for-the-badge&logo=common-workflow-language&logoColor=white&labelColor=0d1117)](#-published-findings)
 
 </div>
 
----
+<br />
 
-## 🧑‍💻 whoami
+## `> whoami`
 
-Offensive security researcher working across web exploitation, Active Directory, binary exploitation, and reverse engineering. Most at home at the low-level end of the stack — taking software apart to understand exactly how and why it breaks.
+```text
+Cybersecurity researcher focused on finding — and understanding — the way things break.
+I work across web application logic, Active Directory attack paths, and native-code
+internals, and I enjoy the full loop: root-cause analysis, writing a working PoC,
+and disclosing responsibly.
+```
 
----
-## 🩸 Latest finds
+<br />
 
-**[CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769)** — my first published CVE.
+## `> focus`
 
-A heap out-of-bounds read in **libtpms** during TPM 2.0 state deserialization. libtpms is the software-TPM library behind `swtpm`/QEMU, so the bug sits in the emulated-TPM path many virtualization stacks rely on. Root-cause notes and a proof-of-concept live in the repo.
+- **Web application security** — authorization and business-logic flaws
+- **Active Directory** — attack-path assessment
+- **Native code** — reverse engineering and exploit development
 
----
+<br />
 
-**[CVE-2026-79411](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79411.md)** — privilege escalation in Webkul Bagisto 2.4.9.
+## `> published-findings`
 
-A backend user with only the `settings.users.edit` permission can assign themselves the Administrator role through the user-management update path, gaining full admin-panel access.
+| # | CVE | Target | Class | Impact |
+| :-: | :-- | :-- | :-- | :-- |
+| 01 | [CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769) | libtpms | Heap OOB Read | Memory disclosure in emulated-TPM path |
+| 02 | [CVE-2026-79411](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79411.md) | Bagisto 2.4.9 | Privilege Escalation | Low-priv user → Administrator |
+| 03 | [CVE-2026-79410](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79410.md) | Bagisto 2.4.9 | Business Logic | Order total forced below real price |
+| 04 | [CVE-2026-79409](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79409.md) | Bagisto 2.4.9 | Info Disclosure (IDOR) | Sensitive data exposed to authed user |
 
----
+<details>
+<summary><b>Read the details</b></summary>
 
-**[CVE-2026-79410](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79410.md)** — improper quantity validation in Webkul Bagisto 2.4.9.
+<br />
 
-An authenticated attacker can manipulate the add-to-cart `quantity` parameter to reduce the total price of shippable goods below the legitimate amount.
+### 01 — [CVE-2026-85769](https://github.com/isukasanuj/CVE-2026-85769) · libtpms · Heap Out-of-Bounds Read
+A heap out-of-bounds read in **libtpms** during TPM 2.0 state deserialization. The affected component powers `swtpm` / QEMU software-TPM deployments, placing the bug in an emulated-TPM path used across virtualization stacks.
+`root-cause analysis` · `proof of concept` · `TPM 2.0`
 
----
+### 02 — [CVE-2026-79411](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79411.md) · Webkul Bagisto 2.4.9 · Privilege Escalation
+A backend user holding only `settings.users.edit` can assign themselves the Administrator role through the user-management update path and gain full admin-panel access.
+`authorization` · `role escalation` · `admin panel`
 
-**[CVE-2026-79409](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79409.md)** — information disclosure in Webkul Bagisto 2.4.9.
+### 03 — [CVE-2026-79410](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79410.md) · Webkul Bagisto 2.4.9 · Price Manipulation
+Improper validation of the add-to-cart `quantity` parameter lets an authenticated user reduce an order total below the legitimate price of shippable goods.
+`input validation` · `business logic` · `e-commerce`
 
-An authorization flaw involving the add-to-cart API and downloadable-product fulfilment components can expose sensitive information to an authenticated attacker.
+### 04 — [CVE-2026-79409](https://github.com/isukasanuj/bagisto-cve/blob/main/CVE-2026-79409.md) · Webkul Bagisto 2.4.9 · Information Disclosure
+An authorization flaw in the add-to-cart API and downloadable-product fulfilment flow can expose sensitive information to an authenticated user.
+`IDOR` · `authorization` · `information disclosure`
+
+</details>
+
+<br />
+
+## `> acknowledgements`
+
+> 🏆 Credited by **GIGABYTE Product Security** for a responsibly disclosed vulnerability.
+
+<br />
 
 
----
-
-## 🏆 Acknowledgements
-
-Credited by **GIGABYTE**'s product security team for a responsibly-disclosed security vulnerability.
-
----
-
-## 🔭 What I'm digging into
-
-- **Web pentesting** — finding and exploiting vulnerabilities in web applications
-- **Active Directory pentesting** — attacking AD environments and understanding why they fall over
-- **Low-level programming** — writing close to the metal and figuring out how computers actually work
-- **Binary exploitation** — turning memory bugs into working exploits
-- **Reverse engineering** — going from binary back to behavior with Ghidra and GDB
-
----
 
 <div align="center">
 
-break_things() → learn() → repeat()
+`break_things() → learn() → repeat()`
 
 </div>
