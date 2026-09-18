@@ -4,7 +4,7 @@
 
 # `isuk4`
 
-**Penetration Tester · Exploit Developer · Security Researcher**
+**Penetration Tester · Computer enthusiastic · Exploit developer**
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1200&color=00E5A0&center=true&vCenter=true&width=620&lines=break_things()+-%3E+understand()+-%3E+repeat();I+like+to+take+things+apart.;" alt="Typing SVG" />
 
